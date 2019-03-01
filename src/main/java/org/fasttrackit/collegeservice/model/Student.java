@@ -12,14 +12,20 @@ public class Student {
     @Id
     @GeneratedValue
     private long id;
-    private String firstName;
     private String lastName;
-    private int majorOption;
+    private String firstName;
     private double averageScore;
+    private int majorOption;
+
 
     public Student() {
     }
-    public Student(String firstName, String lastName, int majorOption, double averageScore) {
+
+    public Student(String lastName, String firstName, double averageScore, int majorOption) {
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.averageScore = averageScore;
+        this.majorOption = majorOption;
     }
 
     public String getFirstName() {

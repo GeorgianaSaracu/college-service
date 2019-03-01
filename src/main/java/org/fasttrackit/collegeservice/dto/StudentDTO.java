@@ -11,11 +11,12 @@ public class StudentDTO {
     public StudentDTO() {
     }
 
-    public StudentDTO(String firstName, String lastName) {
-        this.firstName = firstName;
+    public StudentDTO(String lastName, String firstName, double averageScore, int majorOption) {
         this.lastName = lastName;
+        this.firstName = firstName;
+        this.averageScore = averageScore;
+        this.majorOption = majorOption;
     }
-
     public String getFirstName() {
         return firstName;
     }

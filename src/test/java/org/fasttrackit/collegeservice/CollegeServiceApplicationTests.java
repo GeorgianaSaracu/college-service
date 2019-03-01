@@ -46,14 +46,14 @@ public class CollegeServiceApplicationTests {
         collegeDto.setCollegeMajors(majors);
 
         List<StudentDTO> students= new ArrayList<>();
-        StudentDTO student = new StudentDTO("Campean","Ana");
+        StudentDTO student = new StudentDTO("Campean","Ana", 7.85, 2);
         students.add(student);
-        StudentDTO student1 = new StudentDTO("Campean","Ana");
+        StudentDTO student1 = new StudentDTO("Marin","Ioana",9.6,1);
         students.add(student1);
-        StudentDTO student2= new StudentDTO("Campean","Ana");
-        StudentDTO student3 = new StudentDTO("Campean","Ana");
-        StudentDTO student4= new StudentDTO("Campean","Ana");
-        StudentDTO student5 = new StudentDTO("Campean","Ana");
+        StudentDTO student2= new StudentDTO("Dobrescu","Alexandru",5.6,1);
+        StudentDTO student3 = new StudentDTO("Alexandrescu","Sabina",8.56, 2);
+        StudentDTO student4= new StudentDTO("Farkas","Reka",7.8 ,1 );
+        StudentDTO student5 = new StudentDTO("Paun","Antonia",8.9,2);
 
         students.add(student2);
         students.add(student3);

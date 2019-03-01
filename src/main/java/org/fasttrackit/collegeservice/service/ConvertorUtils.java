@@ -55,6 +55,8 @@ public class ConvertorUtils {
         cd.setFirstName(c.getFirstName());
         cd.setLastName(c.getLastName());
         cd.setId(c.getId());
+        cd.setAverageScore(c.getAverageScore());
+        cd.setMajorOption(c.getMajorOption());
         return cd;
     }
 
@@ -101,6 +103,9 @@ public class ConvertorUtils {
         cd.setFirstName(c.getFirstName());
         cd.setLastName(c.getLastName());
         cd.setId(c.getId());
+        cd.setAverageScore(c.getAverageScore());
+        cd.setMajorOption(c.getMajorOption());
+
         return cd;
     }
 }

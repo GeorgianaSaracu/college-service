@@ -15,10 +15,16 @@ public class CollegeController {
     @Autowired
     private CollegeService service;
 
-    @RequestMapping(path = "/collegeMajor", method = RequestMethod.GET)
+    @RequestMapping(path = "/college", method = RequestMethod.GET)
     @ResponseBody
-    public List<CollegeDTO> getCollegeMajors() {
-        return service.getAllCollegeMajors();
+    public List<CollegeDTO> getColleges() {
+        return service.getAllCollege();
+    }
+
+    @RequestMapping(path = "/college/{id}", method = RequestMethod.GET)
+    @ResponseBody
+    public CollegeDTO getCollegeById(@PathVariable long id) {
+        return service.getById(id);
     }
 
 }

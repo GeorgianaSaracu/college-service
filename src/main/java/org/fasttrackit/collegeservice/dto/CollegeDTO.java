@@ -11,6 +11,7 @@ public class CollegeDTO {
 
     private int major;
     private int availableSpots;
+    private List<CollegeMajorDTO> collegeMajors = new ArrayList<>();
 
     private List<StudentDTO> students = new ArrayList<>();
 
@@ -20,6 +21,14 @@ public class CollegeDTO {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public List<CollegeMajorDTO> getCollegeMajors() {
+        return collegeMajors;
+    }
+
+    public void setCollegeMajors(List<CollegeMajorDTO> collegeMajors) {
+        this.collegeMajors = collegeMajors;
     }
 
     public String getName() {

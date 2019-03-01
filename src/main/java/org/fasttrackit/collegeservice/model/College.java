@@ -20,6 +20,11 @@ public class College {
     @JoinColumn(name = "college_id")
     private List<Student> students = new ArrayList<>();
 
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "college_id")
+    private List<CollegeMajor> collegeMajors = new ArrayList<>();
+
     public Long getId() {
         return id;
     }
@@ -34,6 +39,14 @@ public class College {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<CollegeMajor> getCollegeMajors() {
+        return collegeMajors;
+    }
+
+    public void setCollegeMajors(List<CollegeMajor> collegeMajors) {
+        this.collegeMajors = collegeMajors;
     }
 
     public List<Student> getStudents() {

@@ -8,6 +8,14 @@ public class StudentDTO {
     private int majorOption;
     private double averageScore;
 
+    public StudentDTO() {
+    }
+
+    public StudentDTO(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
     public String getFirstName() {
         return firstName;
     }

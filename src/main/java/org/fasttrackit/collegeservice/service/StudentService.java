@@ -1,9 +1,8 @@
 package org.fasttrackit.collegeservice.service;
 
 import org.fasttrackit.collegeservice.dto.StudentDTO;
-import org.fasttrackit.collegeservice.model.CollegeMajor;
 import org.fasttrackit.collegeservice.model.Student;
-import org.fasttrackit.collegeservice.repo.CollegeRepository;
+import org.fasttrackit.collegeservice.repo.CollegeMajorRepository;
 import org.fasttrackit.collegeservice.repo.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,13 +13,13 @@ import org.springframework.transaction.annotation.Transactional;
 public class StudentService {
 
     @Autowired
-    private CollegeRepository collegeRepository;
+    private CollegeMajorRepository collegeRepository;
     @Autowired
     private StudentRepository studentRepository;
 
     @Transactional
     public void update(StudentDTO student) {
-        Student one = studentRepository.findById(student.getId()).orElse(null);
+        Student one = studentRepository.findOne(student.getId());
         if (one == null) {
             throw new IllegalArgumentException("Invalid id");
 

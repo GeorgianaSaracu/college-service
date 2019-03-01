@@ -1,23 +1,19 @@
-package org.fasttrackit.collegeservice.model;
+package org.fasttrackit.collegeservice.dto;
+
+import org.fasttrackit.collegeservice.model.Student;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-
-@Entity
-public class CollegeMajor {
-    @Id
-    @GeneratedValue
+public class CollegeMajorDTO {
     private Long id;
 
     private String name;
     private int major;
     private int availableSpots;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "college_major_id")
-    private List<Student> students = new ArrayList<>();
+    private List<StudentDTO> students = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -35,11 +31,11 @@ public class CollegeMajor {
         this.name = name;
     }
 
-    public List<Student> getStudents() {
+    public List<StudentDTO> getStudents() {
         return students;
     }
 
-    public void setStudents(List<Student> students) {
+    public void setStudents(List<StudentDTO> students) {
         this.students = students;
     }
 

@@ -3,9 +3,11 @@ package org.fasttrackit.collegeservice.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 
 @Entity
+@Table(name="students_G")
 public class Student {
     @Id
     @GeneratedValue

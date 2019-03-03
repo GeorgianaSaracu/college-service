@@ -25,12 +25,12 @@ public class StudentController {
         studentService.addStudentToMajor(request.getStudentId(), request.getMajorId());
     }
 
-    @RequestMapping(path = "/collegeMajor/{collegeMajorId}/student", method = RequestMethod.POST)
+    @RequestMapping(path = "college/{collegeId}/collegeMajor/{collegeMajorId}/student", method = RequestMethod.POST)
     @ResponseBody
-    public StudentDTO saveStudent(@PathVariable long collegeMajorId,
+    public StudentDTO saveStudent(@PathVariable long collegeId,@PathVariable long collegeMajorId,
                                   @RequestBody StudentDTO request) {
 
-        studentService.create(request, collegeMajorId);
+        studentService.create(request, collegeId, collegeMajorId);
         return request;
     }
 

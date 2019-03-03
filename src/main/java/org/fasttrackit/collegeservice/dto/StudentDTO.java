@@ -7,6 +7,7 @@ public class StudentDTO {
     private String lastName;
     private int majorOption;
     private double averageScore;
+    private Long majorId;
 
     public StudentDTO() {
     }
@@ -17,6 +18,11 @@ public class StudentDTO {
         this.averageScore = averageScore;
         this.majorOption = majorOption;
     }
+
+    public Long getMajorId() {
+        return majorId;
+    }
+
     public String getFirstName() {
         return firstName;
     }
@@ -55,5 +61,9 @@ public class StudentDTO {
 
     public void setAverageScore(double averageScore) {
         this.averageScore = averageScore;
+    }
+
+    public void setMajorId(Long majorId) {
+        this.majorId = majorId;
     }
 }

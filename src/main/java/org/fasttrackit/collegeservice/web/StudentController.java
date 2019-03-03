@@ -1,5 +1,6 @@
 package org.fasttrackit.collegeservice.web;
 
+import org.fasttrackit.collegeservice.dto.EditStudentDTO;
 import org.fasttrackit.collegeservice.dto.StudentDTO;
 import org.fasttrackit.collegeservice.service.CollegeService;
 import org.fasttrackit.collegeservice.service.StudentService;
@@ -14,19 +15,14 @@ public class StudentController {
 
 
     @Autowired
-    private CollegeService service;
-    @Autowired
     private StudentService studentService;
 
 
     @CrossOrigin
-    @RequestMapping(path = "/collegeMajor/{collegeMajorId}/student/{studentId}", method = RequestMethod.PUT)
+    @RequestMapping(path = "/collegeMajor/student", method = RequestMethod.PUT)
     @ResponseBody
-    public StudentDTO editStudent(@PathVariable long collegeMajorId, @PathVariable long studentId,
-                                  @RequestBody StudentDTO request) {
-        request.setId(studentId);
-        studentService.update(request);
-        return request;
+    public void editStudent(@RequestBody EditStudentDTO request) {
+        studentService.addStudentToMajor(request.getStudentId(), request.getMajorId());
     }
 
     @RequestMapping(path = "/collegeMajor/{collegeMajorId}/student", method = RequestMethod.POST)
@@ -37,6 +33,7 @@ public class StudentController {
         studentService.create(request, collegeMajorId);
         return request;
     }
+
 
 }
 

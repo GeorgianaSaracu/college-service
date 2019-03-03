@@ -1,6 +1,7 @@
 package org.fasttrackit.collegeservice.service;
 
 import org.fasttrackit.collegeservice.dto.StudentDTO;
+import org.fasttrackit.collegeservice.model.CollegeMajor;
 import org.fasttrackit.collegeservice.model.Student;
 import org.fasttrackit.collegeservice.repo.CollegeMajorRepository;
 import org.fasttrackit.collegeservice.repo.StudentRepository;
@@ -13,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class StudentService {
 
     @Autowired
-    private CollegeMajorRepository collegeRepository;
+    private CollegeMajorRepository collegeMajorRepository;
     @Autowired
     private StudentRepository studentRepository;
 
@@ -40,8 +41,19 @@ public class StudentService {
         one.setLastName(student.getLastName());
         one.setAverageScore(student.getAverageScore());
         one.setMajorOption(student.getMajorOption());
-        //CollegeMajor collegeMajor = collegeRepository.findById(collegeMajorId).orElse(null);
-        //collegeMajor.getStudents().add(one);
-        //collegeRepository.save(collegeMajor);
+        CollegeMajor collegeMajor = collegeMajorRepository.findOne(collegeMajorId);
+        collegeMajor.getStudents().add(one);
+        collegeMajorRepository.save(collegeMajor);
     }
+
+
+    @Transactional
+    public void addStudentToMajor(long studentId, long collegeMajorId) {
+        Student one = studentRepository.findOne(studentId);
+        CollegeMajor collegeMajor = collegeMajorRepository.findOne(collegeMajorId);
+        collegeMajor.getStudents().add(one);
+        collegeMajorRepository.save(collegeMajor);
+
+    }
+
 }

@@ -8,7 +8,9 @@ import org.fasttrackit.collegeservice.model.CollegeMajor;
 import org.fasttrackit.collegeservice.model.Student;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 public class ConvertorUtils {
@@ -33,17 +35,23 @@ public class ConvertorUtils {
         CollegeDTO dto = new CollegeDTO();
         dto.setId(one.getId());
         dto.setName(one.getName());
-        List<StudentDTO> studentsDto = new ArrayList<>();
+        Map<Long, StudentDTO> studentsDto = new HashMap<>();
         for (Student c : one.getStudents()) {
             StudentDTO cd = convertToDto(c);
-            studentsDto.add(cd);
+            studentsDto.put(cd.getId(),cd);
         }
-        dto.setStudents(studentsDto);
+        dto.setStudents(new ArrayList(studentsDto.values()));
 
         List<CollegeMajorDTO> majorsDtos = new ArrayList<>();
         for (CollegeMajor c : one.getCollegeMajors()) {
             CollegeMajorDTO cd = convertToDto(c);
             majorsDtos.add(cd);
+            for(Student s: c.getStudents()) {
+                StudentDTO studentDTO = studentsDto.get(s.getId());
+                if(studentDTO!=null) {
+                    studentDTO.setMajorId(c.getId());
+                }
+            }
         }
         dto.setCollegeMajors(majorsDtos);
 

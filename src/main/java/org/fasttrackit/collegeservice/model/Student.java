@@ -1,9 +1,6 @@
 package org.fasttrackit.collegeservice.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 
 @Entity
@@ -16,7 +13,6 @@ public class Student {
     private String firstName;
     private double averageScore;
     private int majorOption;
-
 
     public Student() {
     }

@@ -31,7 +31,7 @@ public class CollegeServiceApplicationTests {
 
         CollegeDTO collegeDto = new CollegeDTO();
 
-        collegeDto.setName("Facultatea de mate info");
+        collegeDto.setName("Facultatea de Electronica si Telecomunicatii");
         List<CollegeMajorDTO> majors = new ArrayList<>();
         CollegeMajorDTO major =new CollegeMajorDTO();
         major.setName("Electronica Aplicata");

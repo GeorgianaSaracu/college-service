@@ -34,12 +34,12 @@ public class CollegeServiceApplicationTests {
         collegeDto.setName("Facultatea de mate info");
         List<CollegeMajorDTO> majors = new ArrayList<>();
         CollegeMajorDTO major =new CollegeMajorDTO();
-        major.setName("Sectie Mate");
+        major.setName("Electronica Aplicata");
         major.setAvailableSpots(23);
         majors.add(major);
 
         CollegeMajorDTO major2 =new CollegeMajorDTO();
-        major2.setName("Sectie Info Engleza");
+        major2.setName("Telecomunicatii");
         major2.setAvailableSpots(20);
         majors.add(major2);
 

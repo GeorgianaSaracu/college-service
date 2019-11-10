@@ -18,9 +18,9 @@ spring:
     serialization:
       write_dates_as_timestamps: false
 
-spring.datasource.url: jdbc:postgresql://54.93.65.5:5432/georgiana
-spring.datasource.username: fasttrackit_dev
-spring.datasource.password: fasttrackit_dev
+spring.datasource.url: jdbc:postgresql://localhost:5432/georgiana
+spring.datasource.username: postgres
+spring.datasource.password: postgres
 
 
 # The SQL dialect makes Hibernate generate better SQL for the chosen database

@@ -45,7 +45,7 @@
         <aspectj.weaver.version>1.8.6</aspectj.weaver.version>
         <cucumber.version>1.2.4</cucumber.version>
         <springfox.swagger.version>2.6.1</springfox.swagger.version>
-        <commons.io.version>2.5</commons.io.version>
+        <commons.io.version>2.7</commons.io.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jersey.apache.client4.version>1.19.1</jersey.apache.client4.version>
         <netflix.commons.util.version>0.1.1</netflix.commons.util.version>
